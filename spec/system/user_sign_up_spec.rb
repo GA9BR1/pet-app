@@ -2,8 +2,6 @@ require 'rails_helper'
 
 describe 'Usuário cria conta' do
   it 'com sucesso' do 
-    #Arrange
-    #Act
     visit root_path
     click_on 'Login'
     click_on 'Criar Conta'
@@ -13,7 +11,6 @@ describe 'Usuário cria conta' do
     fill_in 'Confirme sua senha', with: 'password'
     click_on 'Cadastrar'
 
-    #Assert
     expect(current_path).to eq root_path
     expect(page).to have_content('Boas vindas! Você realizou seu registro com sucesso.')
     expect(page).to have_content('PetApp')
